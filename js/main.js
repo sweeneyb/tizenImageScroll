@@ -21,6 +21,22 @@ var init = function () {
     		setImage(index);
     		break;
     	case 38: //UP arrow
+    		$.ajax({
+    			 
+    			url : 'https://random-data-api.com/api/app/random_app',
+    			type : 'GET',
+    			success : function(xmlinfo) {
+    			alert("success : " + xmlinfo.app_name );
+    			 
+    			},
+    			error : function(request,error) {
+    			alert("ERROR request:" + request + "error : " + error);
+    			},
+    			complete : function(
+    			xmlinfo, status) {
+    			alert("Complete  xmlinfo: " + xmlinfo + "status : " + status);
+    			}
+    			});
     		break;
     	case 39: //RIGHT arrow
     		next();
